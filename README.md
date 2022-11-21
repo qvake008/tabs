@@ -1,1 +1,1 @@
-# Tabs for googl chrome
+# Tabs for Google Chrome.
