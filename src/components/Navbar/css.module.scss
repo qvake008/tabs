@@ -1,5 +1,7 @@
 .container {
     position: fixed;
+    display: flex;
+    flex-direction: column;
     top: 10px;
     right: 10px;
 }

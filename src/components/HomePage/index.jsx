@@ -3,6 +3,7 @@ import React from 'react'
 import Styles from './css.module.scss'
 import logo from './img/logo.png'
 
+import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
@@ -14,6 +15,8 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Divider from '@mui/material/Divider';
+import GoogleIcon from '@mui/icons-material/Google';
 
 export default function HomePage() {
 
@@ -41,7 +44,7 @@ export default function HomePage() {
 
   return (
     <div className={Styles.pageStyle}>
-        <div className={Styles.container}>
+        <Paper elevation={2} className={Styles.container}>
             <div className={Styles.signUpContainer}>
                 <div className={Styles.logo}>
                     <img src={logo} alt="logo" />
@@ -84,10 +87,13 @@ export default function HomePage() {
                     <Link href="#" underline="hover">Forgot password?</Link>
                 </div>
                 <div className={Styles.container__btn}>
-                    <Button variant="contained" size="large">Log in</Button>
+                    <Button color="success" variant="contained" size="large">Log in</Button>
+                    <Button color="error" variant="contained" sx={{marginTop:'20px'}} startIcon={<GoogleIcon />}>Contine with Google</Button>
+                    <Divider sx={{margin:'20px 0'}}>or</Divider>
+                    <Button variant="contained" size="large">Register</Button>
                 </div>
             </div>
-        </div>
+        </Paper>
     </div>
   )
 }
