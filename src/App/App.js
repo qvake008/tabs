@@ -35,7 +35,7 @@ function App() {
       element: <HomePage/>,
     },
     {
-      path: "/register",
+      path: "/tabs/",
       element: <HomePage/>,
     },
   ]);
