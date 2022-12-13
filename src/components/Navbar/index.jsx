@@ -7,7 +7,19 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 
-export default function Navbar({onc}) {
+export default function Navbar({mode,modeSwitch}) {
+  const activeMode = localStorage.getItem('activeMode');
+  React.useEffect(()=>{
+    activeMode === 'dark' ? modeSwitch('dark') : modeSwitch('light')
+  },[])
+
+  const switchColorMode = ()=> {
+    mode === 'light' ? modeSwitch('dark') : modeSwitch('light');
+  }
+
+React.useEffect (()=>{
+  localStorage.setItem('activeMode', mode)
+},[mode])
 
 
   return (
@@ -18,7 +30,7 @@ export default function Navbar({onc}) {
         <IconButton>
           <AddCircleIcon/>
         </IconButton>
-        <IconButton onClick={onc.toggleColorMode}>
+        <IconButton onClick={switchColorMode}>
           <Brightness4Icon/>
         </IconButton>
     </div>
