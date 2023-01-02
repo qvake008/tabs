@@ -17,6 +17,8 @@ export default function Navbar({mode,modeSwitch}) {
     mode === 'light' ? modeSwitch('dark') : modeSwitch('light');
   }
 
+  console.log('location')
+
 React.useEffect (()=>{
   localStorage.setItem('activeMode', mode)
 },[mode])
